@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+
+  :root {
+    /* fonts */
+    --font-rounded-mplus-1c: "Rounded Mplus 1c";
+    --font-poppins: Poppins;
+    --font-yuji-syuku: "Yuji Syuku";
+
+    /* font sizes */
+    --font-size-base: 1rem;
+    --font-size-mini: 0.938rem;
+    --font-size-lg: 1.125rem;
+    --font-size-5xl: 1.5rem;
+    --font-size-lgi: 1.188rem;
+    --font-size-xl: 1.25rem;
+    --font-size-13xl: 2rem;
+    --font-size-21xl: 2.5rem;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-gainsboro-100: #d9d9d9;
+    --color-gainsboro-200: #d8d8d8;
+    --color-black: #000;
+    --color-darkslategray-100: #464646;
+    --color-whitesmoke: #f7f8fa;
+    --color-gray-100: #0d1f41;
+    --color-royalblue-100: #4573d6;
+    --color-royalblue-200: #1f4cb1;
+    --color-dimgray: #555;
+  
+    /* Gaps */
+    --gap-0: 0rem;
+    --gap-base: 1rem;
+    --gap-xl: 1.25rem;
+    --gap-10xl: 1.813rem;
+    --gap-xs: 0.75rem;
+    --gap-5xl: 1.5rem;
+    --gap-3xs: 0.625rem;
+    --gap-12xs: 0.063rem;
+  
+    /* Paddings */
+    --padding-59xl: 4.875rem;
+    --padding-3xl: 1.375rem;
+    --padding-lg: 1.125rem;
+    --padding-3xs: 0.625rem;
+    --padding-41xl: 3.75rem;
+    --padding-xl: 1.25rem;
+    --padding-6xl: 1.563rem;
+    --padding-1441xl: 91.25rem;
+    --padding-20xl: 2.438rem;
+    --padding-base: 1rem;
+    --padding-13xl: 2rem;
+    --padding-32xl: 3.188rem;
+    --padding-21xl: 2.5rem;
+    --padding-43xl: 3.875rem;
+    --padding-12xl: 1.938rem;
+    --padding-5xl: 1.5rem;
+    --padding-107xl: 7.875rem;
+    --padding-11xl: 1.875rem;
+    --padding-63xl: 5.125rem;
+    --padding-lg-5: 1.156rem;
+    --padding-8xs-5: 0.281rem;
+    --padding-7xs-5: 0.344rem;
+    --padding-12xs: 0.063rem;
+
+    /* Border radiuses */
+    --br-5xs: 8px;
+    --br-8xs: 5px;
+    --br-9xs: 4px;
+    --br-sm: 14px;
+  }

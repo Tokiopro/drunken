@@ -1,0 +1,9 @@
+.dh-logo-1-icon, .cart-outline-icon, .magnify-icon { height: 1.5rem; width: 1.5rem; position: relative; overflow: hidden; }
+.explore, .parent, .magnify-parent, .navigation { display: flex; flex-direction: row; align-items: flex-start; }
+.parent { width: 32rem; justify-content: space-between; gap: var(--gap-xl); font-size: var(--font-size-base); color: var(--color-dimgray); }
+.explore { flex: 1; overflow: hidden; align-items: center; justify-content: center; }
+.navigation { height: 6.25rem; border-bottom: 0.5px solid var(--color-gainsboro-200); padding: var(--padding-xl) var(--padding-41xl); gap: var(--gap-3xs); top: 0; position: sticky; }
+.rectangle, .vector, .frame-frame1, .frame-frame2, .the-drunken-horse-gin { position: relative; }
+.rectangle { top: 3.688rem; left: 3.688rem; border-radius: 50%; background-color: rgba(228, 236, 246, 0.5); width: 68.5rem; height: 68.5rem; }
+.vector, .frame-frame1 { border-radius: 50%; top: 0; left: 0; width: 100%; height: 100%; }
+.frame-frame2 { background-color: var(--color-gainsboro-100); }
