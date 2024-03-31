@@ -354,36 +354,35 @@
   </body>
   <script>
     $(document).ready(function(){
-      $('.awards').slick({
-        autoplay: true, // 自動再生をオンにする
-        autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
-        arrows: false, // 矢印ナビゲーションの表示/非表示
-        dots: true, // ドットナビゲーションの表示/非表示
-        infinite: true, // 無限ループ
-        slidesToShow: 3, // デフォルトでは3スライドを表示
-        slidesToScroll: 1, // 一度のスクロールで移動するスライドの数
-        responsive: [
-          {
-            breakpoint: 768, // 768px以下の画面幅で適用
-            settings: {
-              slidesToShow: 1, // モバイル表示では1スライドのみ表示
-              slidesToScroll: 1,
-              width: '80vw' // スライドの幅を80vwに指定
-            }
-          }
-        ]
-      });
+      // 画面の幅をチェック
+      if ($(window).width() < 768) {
+        // 画面幅が768px以下の場合、スライダーを有効にする
+        $('.awards').slick({
+          autoplay: true, // 自動再生をオンにする
+          autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
+          arrows: false, // 矢印ナビゲーションの表示/非表示
+          dots: true, // ドットナビゲーションの表示/非表示
+          infinite: true, // 無限ループ
+          slidesToShow: 1, // モバイル表示では1スライドのみ表示
+          slidesToScroll: 1, // 一度のスクロールで移動するスライドの数
+          width: '80vw' // スライドの幅を80vwに指定
+        });
+      }
     });
     $(document).ready(function(){
-      $('.menu-row').slick({
-        autoplay: true, // 自動再生をオンにする
-        autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
-        arrows: true, // 矢印ナビゲーションの表示/非表示
-        dots: true, // ドットナビゲーションの表示/非表示
-        infinite: true, // 無限ループ
-        slidesToShow: 1, // 一度に表示するスライドの数
-        slidesToScroll: 1 // 一度のスクロールで移動するスライドの数
-      });
+      // 画面の幅をチェック
+      if ($(window).width() < 768) {
+        // 画面幅が768px以下の場合、スライダーを有効にする
+        $('.menu-row').slick({
+          autoplay: true, // 自動再生をオンにする
+          autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
+          arrows: true, // 矢印ナビゲーションの表示/非表示
+          dots: true, // ドットナビゲーションの表示/非表示
+          infinite: true, // 無限ループ
+          slidesToShow: 1, // 一度に表示するスライドの数
+          slidesToScroll: 1 // 一度のスクロールで移動するスライドの数
+        });
+      }
     });
   </script>
 
