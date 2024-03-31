@@ -25,6 +25,12 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <!-- jQueryの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Slick SliderのCSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Slick SliderのJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
   <body>
     <div class="main">
@@ -42,7 +48,7 @@
       </section>
       <section class="about">
         <div class="about-wrapper">
-          <div class="video-container">
+          <div class="video-container about-video">
             <video controls>
               <source src="https://cdn.shopify.com/videos/c/o/v/2816978bd4ea4e4aa41f30942f90af19.mp4" type="video/mp4">
             </video>
@@ -110,7 +116,7 @@
         <div class="blue-text-container">
           <p class="white-text text-style">製品を一つ、一つハンドメイドで職人が作っています。アントワープは古来より職人が多いことで有名な都市です。彼らがこだわりを持ってスパイスを世界中から選び、最新技術と古来からの製法を融合し、調合・抽出を経て、丁寧にボトル詰めとラベリングを行っています。</p>
         </div>
-        <div class="video-container">
+        <div class="video-container peppar-video">
           <iframe src="https://www.youtube.com/embed/Mi9oryFkevY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="cta-wrapper">
@@ -139,7 +145,7 @@
           <!-- 2段目のセクション -->
           <div class="row">
             <div class="column-left2">
-              <p class="content-title text-style"><span class="bullet-point">●</span>味や香りの特徴</p>
+              <h2 class="content-title text-style"><span class="bullet-point">●</span>味や香りの特徴</h2>
               <p class="text-style">山椒に似た舌にピリリとくる刺激・香りと、グレープフルーツやパッションフルーツのような柑橘系のフルーティな香りを併せ持っています。
                 ジンに使われている柑橘類とも非常に相性がよく、他では味わえない独自の香りを特徴づけています。</p>
             </div>
@@ -188,7 +194,7 @@
       <section class="menu">
         <div class="menu-section">
           <h2 class="menu-description-title text-style">【The Drunken Horse Ginのおすすめの楽しみ方】</h2>
-          <div class="video-container">
+          <div class="video-container menu-video">
             <video controls>
               <source src="https://cdn.shopify.com/videos/c/o/v/aea642f1b67a4e5ebc798bc937ea9039.mp4" type="video/mp4">
             </video>
@@ -347,39 +353,39 @@
 
   </body>
   <script>
-    // $(document).ready(function(){
-    //   $('.awards').slick({
-    //     infinite: true,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     responsive: [
-    //       {
-    //         breakpoint: 1024,
-    //         settings: {
-    //           slidesToShow: 3,
-    //           infinite: true
-    //         }
-    //       },
-    //       {
-    //         breakpoint: 600,
-    //         settings: {
-    //           slidesToShow: 2,
-    //           dots: true
-    //         }
-    //       },
-    //       {
-    //         breakpoint: 480,
-    //         settings: {
-    //           slidesToShow: 1,
-    //           dots: true
-    //         }
-    //       }
-    //     ]
-    //   });
-    // });
-    // </script>
+    $(document).ready(function(){
+      $('.awards').slick({
+        autoplay: true, // 自動再生をオンにする
+        autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
+        arrows: false, // 矢印ナビゲーションの表示/非表示
+        dots: true, // ドットナビゲーションの表示/非表示
+        infinite: true, // 無限ループ
+        slidesToShow: 3, // デフォルトでは3スライドを表示
+        slidesToScroll: 1, // 一度のスクロールで移動するスライドの数
+        responsive: [
+          {
+            breakpoint: 768, // 768px以下の画面幅で適用
+            settings: {
+              slidesToShow: 1, // モバイル表示では1スライドのみ表示
+              slidesToScroll: 1,
+              width: '80vw' // スライドの幅を80vwに指定
+            }
+          }
+        ]
+      });
+    });
+    $(document).ready(function(){
+      $('.menu-row').slick({
+        autoplay: true, // 自動再生をオンにする
+        autoplaySpeed: 2000, // 自動再生の速度（ミリ秒）
+        arrows: true, // 矢印ナビゲーションの表示/非表示
+        dots: true, // ドットナビゲーションの表示/非表示
+        infinite: true, // 無限ループ
+        slidesToShow: 1, // 一度に表示するスライドの数
+        slidesToScroll: 1 // 一度のスクロールで移動するスライドの数
+      });
+    });
+  </script>
 
     <!-- layout/theme.liquidファイル内に以下を追加します（</head>の直前）: -->
 <!-- {{ '//cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css' | stylesheet_tag }}

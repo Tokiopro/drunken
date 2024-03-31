@@ -45,7 +45,7 @@ section {
 
 .text-top-right {
     position: absolute;
-    top: -18%;
+    top: 5%;
     right: 2%;
     z-index: 2; /* 背景画像の上に配置 */
     color: #132E64;
@@ -93,8 +93,28 @@ section {
 
   .product-image {
     width: 17vw;
-    z-index: 2; /* 背景画像の上に配置 */
+    translate: -128px 0px;
     animation: float 3s ease-in-out infinite;
+  }
+
+  /* モバイルFV */
+  @media (max-width: 768px) {
+    .section-fv {
+      margin-top: 80px;
+    }
+    .title-drunken {
+      margin-top: 100px;
+    }
+    .title-horse-gin {
+      margin-top: -20px;
+    }
+    .text-top-right {
+      font-size: 8px;
+    }
+    .product-image {
+      width: 43vw;
+      translate: -109px 0px;
+    }
   }
 
 /* ここからabout */
@@ -157,17 +177,39 @@ section {
     font-weight: bold;
   }
 
-  /* 追加的なメディアクエリでレスポンシブデザインを適用する */
+  /* モバイルabout */
   @media (max-width: 768px) {
     .about-wrapper {
       flex-direction: column;
     }
-
+    .video-container {
+      height: 30vh !important;
+      padding-top: 100px;
+    }
     .video-container,
     .text-container {
       width: 100%;
       padding-right: 0;
       padding-left: 0;
+    }
+    .about-content-wrapper {
+      display: block; /* flexからblockへ変更して要素を縦に並べる */
+    }
+    .orange-image {
+      max-width: 80vw; /* 画像の幅を80vwに設定 */
+      margin: 0 auto; /* 画像を中央寄せ */
+      display: block; /* displayプロパティを指定して中央寄せの効果を確実に */
+    }
+    .text-container {
+      width: 80vw; /* テキストコンテナの幅を80vwに設定 */
+      margin: 20px auto 0; /* 上に20pxのマージンを設け、中央寄せ */
+      padding: 0; /* 左のパディングを削除してコンテンツ間の間隔を調整 */
+    }
+    .text-container h2 {
+      font-size: 1.2rem;
+    }
+    .text-content {
+      padding: 10px;
     }
   }
 
@@ -279,6 +321,12 @@ section {
     box-sizing: border-box; /* paddingをwidthに含める */
     border-radius: 15px;
   }
+  @media screen and (max-width: 768px) {
+    .cta-wrapper .button {
+      font-size: 0.6rem;
+      width: 43vw;
+    }
+  }
   .green {
     background-color: #22B11F;
   }
@@ -302,6 +350,25 @@ section {
   .blue:active {
     background-color: #173b89;
     transform: translateY(2px);
+  }
+
+  /* モバイルaward */
+  @media screen and (max-width: 768px) {
+    .award {
+      width: 80vw;
+      margin: 0 auto;
+      height: 20vh;
+    }
+    /* テキストと画像コンテナにスタイルを適用 */
+    .award-text, .award-image {
+      padding: 15px; /* 余白を設定 */
+    }
+
+    /* 必要に応じてさらにスタイリングを追加 */
+    .award-image img {
+      margin: 0 auto;
+      height: auto; /* 画像のアスペクト比を保持 */
+    }
   }
 
   /* ここからペッパーセクション */
@@ -336,6 +403,35 @@ section {
 
   .column-left2 {
     padding: 5%;
+  }
+
+  /* モバイルペッパー */
+  @media screen and (max-width: 768px){
+    .results-title {
+      text-align: center;
+      margin-left: 0px;
+    }
+    .white-text {
+      font-size: 1rem;
+    }
+    .peppar-video {
+      margin-top: -40px;
+    }
+    .pepper-section .row {
+      flex-direction: column; /* 縦並び */
+      padding-top: 0px;
+    }
+    .pepper-section .row .column-right2 {
+      order: -1; /* 2段目のテキストを上に移動 */
+    }
+    .column-left img {
+      width: 100vw;
+      padding-left: 0px;
+    }
+    .column-right2 img {
+      width: 100vw;
+      padding-right: 0px;
+    }
   }
 
   /* ここからフレーバーセクション */
@@ -400,6 +496,16 @@ section {
     min-height: 150px; /* 最小の高さを指定してコンテンツに応じて高さを変更 */
   }
 
+  /* モバイルフレーーバー */
+  @media screen and (max-width: 768px) {
+    .flavor-section p {
+      font-size: 0.6rem;
+    }
+    .wave-number, .wave-text {
+      min-height: 60px;
+    }
+  }
+
   /* ここからメニューセクション */
 
   .menu-row {
@@ -447,6 +553,19 @@ section {
     padding: 20px;
     margin: 5% auto;
     font-size: 2rem;
+  }
+
+  /* モバイルmenu */
+  @media screen and (max-width: 768px){
+    .menu-video {
+      margin-top: -100px;
+    }
+    .menu-row .slick-initialized .slick-slide {
+      display: block !important;
+    }
+    .menu-description-text {
+      font-size: 0.8rem;
+    }
   }
 
   /* ここから紹介セクション　*/
@@ -514,6 +633,7 @@ section {
 
   .text-section {
     padding-top: 20px; /* 画像の下に来るテキストの上に余白を追加 */
+    font-size: 0.7rem;
   }
 }
 
