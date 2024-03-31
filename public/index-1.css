@@ -1,6 +1,46 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.section-fv .text-top-right,
+.section-fv .title-drunken,
+.section-fv .title-horse-gin {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+
+body {
+  overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+section {
+  margin: 20px auto; /* 中央揃え */
+}
+.text-style {
+  font-family: 'RocknRoll One', sans-serif;
+}
+
 .section-fv {
     position: relative;
     text-align: center; /* 画像とテキストを中央に配置 */
+    padding: 20px;
   }
 
 .text-top-right {
@@ -52,13 +92,18 @@
   }
 
   .product-image {
-    width: 20vw;
+    width: 17vw;
     z-index: 2; /* 背景画像の上に配置 */
+    animation: float 3s ease-in-out infinite;
   }
 
 /* ここからabout */
   .about {
     padding: 20px;
+  }
+
+  .about-content-wrapper {
+    margin-top: 50px;
   }
 
   .about-wrapper {
@@ -139,7 +184,8 @@
     background-color: #1F4CB1; /* 背景色 */
     color: #ffffff; /* テキスト色 */
     margin: 0 auto;
-    padding: 20px;
+    text-align: start;
+    padding: 10px;
   }
 
   .results-title {
@@ -151,7 +197,7 @@
   .awards {
     display: flex;
     justify-content: space-around;
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
 
   .award {
@@ -166,6 +212,9 @@
   }
   .award-1 {
     border-color: #1F4CB1;
+  }
+  .award1-image {
+    border-radius: 15px;
   }
   .award-2 {
     border-color: #8F7A49;
@@ -188,11 +237,7 @@
     display: block;
     height: auto; /* 画像の最大高さを設定 */
     width: 17vw; /* 幅は自動調整 */
-  }
-
-  .award-image img {
     max-width: 100%;
-    border-radius: 15px; /* 画像の角も丸く */
   }
 
   .video-container {
@@ -206,16 +251,303 @@
     height: 100% !important;
   }
 
+ .white-text {
+  font-size: 24px;
+  padding: 10px;
+ }
+
   .cta-wrapper {
     flex-shrink: 0;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'RocknRoll One', sans-serif;
   }
-  .buy {
-    position: relative;
-    font-size: var(--font-size-21xl);
-    color: var(--color-white);
+  .cta-wrapper .button {
+    display: inline-block; /* ボタンのように扱う */
+    padding: 10px 20px;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    text-decoration: none; /* リンクの下線を消す */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-family: 'RocknRoll One', sans-serif;
+    width: 40vw;
+    box-sizing: border-box; /* paddingをwidthに含める */
+    border-radius: 15px;
+  }
+  .green {
+    background-color: #22B11F;
+  }
+
+  .green:hover {
+    background-color: #1e9f1b; /* ホバー時の色を少し暗く */
+  }
+  .green:active {
+    background-color: #1b8d17; /* 押下時の色をもっと暗く */
+    transform: translateY(2px); /* 押下時にボタンを少し下に動かす */
+  }
+
+  .blue {
+    background-color: #1F4CB1;
+  }
+
+  .blue:hover {
+    background-color: #1b449d;
+  }
+
+  .blue:active {
+    background-color: #173b89;
+    transform: translateY(2px);
+  }
+
+  /* ここからペッパーセクション */
+  .full-width-image img {
+    width: 100vw;
+    height: auto;
+  }
+
+  .pepper-section .row {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+  .pepper-section .column {
+    flex: 1; /* 両カラムが等しい幅を持つように */
+  }
+
+  .column-left img{
+    width: 40vw;
+    padding-left: 20px;
+  }
+
+  .column-right {
+    padding: 5%;
+  }
+
+  .column-right2 img{
+    width: 40vw;
+    padding-right: 20px;
+  }
+
+  .column-left2 {
+    padding: 5%;
+  }
+
+  /* ここからフレーバーセクション */
+  .flavor {
+    /* ここではセクション自体に対する特別なスタイルは指定していません */
+  }
+  .flavor-section {
+    max-width: 100vw; /* セクションの最大幅をビューポート幅に合わせる */
+  }
+  .flavor-description {
+    padding-left: 10vw;
+  }
+  .flavor-title {
+    font-size: 30px;
+  }
+  .flavor-row {
+    display: flex;
+    justify-content: space-between; /* コンテンツを両端に寄せる */
+    align-items: center; /* コンテンツを垂直方向に中央揃えにする */
+    margin: 0 10px; /* 適宜調整してください */
+  }
+  .flavor-description, .wave-box {
+    width: 50%; /* 説明とボックスを半分の幅にする */
+  }
+  .wave-box {
+    padding: 10px; /* 内部の余白 */
+    color: white; /* テキストカラー */
+    text-align: center; /* テキストを中央揃えにする */
+    /* background-color はインラインスタイルで設定されているためここでは不要です */
+  }
+  .wave-row {
+    display: flex;
+    justify-content: space-between; /* コンテンツを両端に寄せる */
+    border-top: 1px dashed #7CBAFF; /* 上の点線ボーダー */
+    border-bottom: 1px dashed #7CBAFF; /* 下の点線ボーダー */
+    width: 100vw;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    height: auto;
+  }
+  .wave {
+    width: 35vw; /* Waveの幅 */
+    padding: 10px; /* 内部の余白 */
+    color: #000; /* テキストカラー */
+    height: 100%;
+  }
+  .wave-number {
+    background-color: #7CBAFF;
+    width: 35vw;
+    color: #FFFFFF;
+  }
+  .wave-text {
+    width: 65vw;
+    text-align: start;
+  }
+  .wave-number,
+  .wave-text {
+    display: flex;
+    align-items: center; /* コンテンツを垂直方向に中央揃え */
+    justify-content: center; /* コンテンツを水平方向に中央揃え */
+    min-height: 150px; /* 最小の高さを指定してコンテンツに応じて高さを変更 */
+  }
+
+  /* ここからメニューセクション */
+
+  .menu-row {
+    display: flex;
+    justify-content: start; /* カードを中央寄せ */
+    flex-wrap: wrap; /* 必要に応じて折り返し */
+    margin-top: 30px;
+  }
+
+  .menu-card {
+    flex-basis: calc(33.333% - 20px); /* 3つのカードが横並びになるように設定 */
+    margin: 10px; /* カード間の余白 */
+    text-align: start; /* テキストを中央寄せ */
+  }
+
+  .menu-card img {
+    width: 100%; /* 画像をカードの幅に合わせて伸縮 */
+    height: 40vh; /* 画像のアスペクト比を維持 */
+    object-fit: cover;
+  }
+
+  .menu-card .text {
+    margin-top: 10px; /* 画像とテキストの間隔 */
+  }
+
+  .menu-description-title {
+    background-color: #1F4CB1;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin: 5% auto;
+    font-size: 24px;
+  }
+  .menu-description {
+    background-color: #EEF5FF;
+    width: 100%;
+  }
+
+  .menu-description-text {
+    color: #464646;
+    font-family: 'RocknRoll One', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    margin: 5% auto;
+    font-size: 2rem;
+  }
+
+  /* ここから紹介セクション　*/
+  .introduction-card {
+    flex-basis: calc(33.333% - 20px); /* 3つのカードが横並びになるように設定 */
+    margin: 10px; /* カード間の余白 */
+    text-align: start; /* テキストを中央寄せ */
+  }
+  .introduction-card img {
+    width: 100%; /* 画像をカードの幅に合わせて伸縮 */
+    height: 40vh; /* 画像のアスペクト比を維持 */
+    object-fit: fill;
+  }
+  .introduction-title {
+    background-color: #1F4CB1;
+    text-align: center;
+  }
+
+  .introduction-text {
+    color: #ffffff;
+  }
+
+  /* ここからメーカーセクション */
+
+  .maker-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .maker-content {
+    display: flex;
+    align-items: flex-start; /* コンテンツを上端揃えに */
+    width: 100%; /* フル幅 */
+    margin: auto; /* 中央揃え */
+  }
+  .image-section {
+    flex: 1; /* フレックスアイテムのフレックスベーシスを等しく */
+    padding-right: 20px; /* 右のテキストセクションとの間に余白を作る */
+  }
+  .image-section h2 {
+    margin-bottom: 10px;
+  }
+  .image-section img {
+    max-width: 100%; /* 画像がコンテナを超えて拡大しないようにする */
+    height: auto; /* 画像のアスペクト比を維持 */
+    margin-bottom: 10px;
+  }
+  .text-section {
+    flex: 1; /* フレックスアイテムのフレックスベーシスを等しく */
+    padding-left: 20px; /* 左のイメージセクションとの間に余白を作る */
+    padding-top: 50px;
+    font-size: 1.3rem;
+  }
+
+@media (max-width: 768px) {
+  .maker-content {
+    flex-direction: column; /* 子要素を縦方向に配置 */
+  }
+
+  .image-section, .text-section {
+    padding: 0; /* パディングをリセット */
+    width: 100%; /* モバイルビューでは幅を100%に */
+  }
+
+  .text-section {
+    padding-top: 20px; /* 画像の下に来るテキストの上に余白を追加 */
+  }
+}
+
+
+  /* ここからアピールセクション　*/
+  .appeal-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .appeal-box {
+    background-color: #FFFFFF;
+    width: 40vw;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* オプションで軽い影を追加 */
+  }
+  .appeal-title {
+    background-color: #EEF5FF;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 10px; /* タイトルとテキストの間に余白を追加 */
+  }
+  .appeal-text {
+    padding: 3%;
+  }
+  @media (max-width: 768px) {
+    .appeal-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    .appeal-box {
+      width: 80vw;
+    }
   }
 
 
